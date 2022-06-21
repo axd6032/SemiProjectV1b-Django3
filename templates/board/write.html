@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Python 웹 프로젝트 v1</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/webproject.css">
+    <style>
+        form { width: 60%; margin: 65px auto 10px}
+
+        form div {margin-top: 10px}
+
+        form label {display: inline-block; font-weight: bold;
+                    text-align: right; width: 120px;
+                    margin-right: 15px}
+        .dragup {vertical-align: top; margin-top: 5px}
+
+    </style>
+</head>
+<body>
+<div id = "wrap">
+    <header>
+        <h1>Python 웹 프로젝트 v1</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="board.html">게시판</a></li>
+                <li><a href="myinfo.html">회원정보</a></li>
+
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <div id ="main">
+        <h2>게시판 새글쓰기</h2>
+        <form name="boardfrm" method="post" action="board.do">
+
+        <div><label for="title">제목</label><input type="text" name="title" id="title"></div>
+
+        <div><label for="title">작성자</label><span>zzyzzy</span></div>
+
+        <div><label for="contents" class="dragup">본문</label>
+            <textarea name="contents" id="contents"
+                      rows="10" cols="50" style="resize: none"></textarea></div>
+
+        <div><label></label>
+                <button type="submit">입력완료</button>
+                <button type="reset">다시입력</button>
+        </div>
+        </form>
+    </div>
+
+    <footer>
+        <hr>
+        <span>copyright &copy; 2022. siestageek. All Rights Reserved.</span>
+    </footer>
+</div>
+</body>
+</html>

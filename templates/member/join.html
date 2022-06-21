@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Python 웹 프로젝트 v1</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/webproject.css">
+    <style>
+        /* 로그인 폼 배치하기 */
+        form { /* border: 1px solid red ; */ width: 350px; margin: 150px auto }
+
+        /* 회원가입 폼요소 여백 주기 */
+        form div {margin-top: 10px}
+
+        /* 회원가입 폼 라벨에 너비 설정 */
+        /* display인라인 요소를 블록요소로 변경 */
+        form label { display: inline-block; width: 120px; text-align: right;
+                     font-weight: bold }
+        /* 회원가입 폼 버튼 위치 설정 */
+        form button:first-child {margin-left: 126px }
+    </style>
+</head>
+<body>
+<div id = "wrap">
+    <header>
+        <h1>Python 웹 프로젝트 v1</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="board.html">게시판</a></li>
+                <li><a href="myinfo.html">회원정보</a></li>
+
+            </ul>
+        </nav>
+        <hr>
+
+    </header>
+    <div id ="main">
+             <h2>회원가입</h2>
+            <form name="joinfrm" method="post" action="join.do">
+                    <div>
+                    <label for = "userid">아이디</label>
+                        <input type="text" name="userid" id="userid"></div>
+
+                    <div>
+                    <label for = "passwd">비밀번호</label>
+                        <input type="password" name="passwd" id="passwd"></div>
+
+                    <div>
+                    <label for = "repasswd">비밀번호확인</label>
+                        <input type="password" name="repasswd" id="repasswd"></div>
+
+                    <div><label for="name">이름</label>
+                    <input type="text" name="name" id="name"></div>
+
+                    <div><label for="email">이메일</label>
+                    <input type="email" name="email" id="email"></div>
+
+                    <div><!--<label></label>-->
+                        <button type="submit">입력완료</button>
+                        <button type="reset">다시입력</button></div>
+
+            </form>
+
+    </div>
+    <footer>
+        <hr>
+        <span>copyright &copy; 2022. siestageek. All Rights Reserved.</span>
+    </footer>
+</div>
+</body>
+</html>
