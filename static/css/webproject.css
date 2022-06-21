@@ -1,0 +1,26 @@
+/* 링크 관련 스타일 시트 */
+a { font-weight: bold }
+a:link {color : black ; text-decoration: none }
+a:visited {color : black ; text-decoration: none }
+a:hover {color : orange ; text-decoration: underline }
+a:active {color : orange ; text-decoration: none }
+
+/* 컨텐츠 영역 너비 지정 및 정중앙 배치 */
+#wrap {/*border: 1px solid red*/; width: 1250px;
+              margin: 0 auto}
+
+/*저작권 문구 가운데 정렬*/
+footer span{display: block ; text-align: center}
+
+/* 메인 영역 크기 지정*/
+#main {height: auto; min-height: 500px}
+
+/* 상단 메뉴 수평 배치*/
+ul { list-style: none; padding: 0}
+ul li {display: inline-block; margin-left: 140px }
+
+/* 상단 로고 배치 */
+header h1 {margin-bottom: 45px}
+
+/* 구분선 */
+hr { background: black; height: 1px;}
