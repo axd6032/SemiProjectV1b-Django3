@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python 웹 프로젝트 v1</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/webproject.css">
-    <style>
+{% extends 'layout/base.html' %}
+
+{% block title %}member/login{% endblock %}
+
+{% block stlye %}
         form {width: 350px; margin: 150px auto }
 
         form div {margin-top: 10px}
@@ -14,42 +11,19 @@
                      font-weight: bold }
 
         form button:first-child {margin-left: 126px }
-    </style>
-</head>
-<body>
-    <div id = "wrap">
-        <header>
-            <h1>Python 웹 프로젝트 v1</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="join.html">회원가입</a></li>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="board.html">게시판</a></li>
-                    <li><a href="myinfo.html">회원정보</a></li>
+{% endblock %}
 
-                </ul>
-            </nav>
-            <hr>
-        </header>
-        <h2>로그인</h2>
-        <form id ="main">
+{% block content %}
+     <h2>로그인</h2>
+    <form>
+        <div><label for="userid">아이디</label>
+          <input type="text" name="userid" id="userid" required></div>
 
-        <form>
-                <div><label for="userid">아이디</label>
-                  <input type="text" name="userid" id="userid" required></div>
+        <div><label for="passwd">비밀번호</label>
+          <input type="password" name="passwd" id="passwd" required></div>
 
-                <div><label for="passwd">비밀번호</label>
-                  <input type="password" name="passwd" id="passwd" required></div>
+        <div><button type="button">로그인</button></div>
+    </form>
+{% endblock %}
 
-                <div><button type="button">로그인</button></div>
-        </form>
-        </form>
-
-        <footer>
-            <hr>
-            <span>copyright &copy; 2022. siestageek. All Rights Reserved.</span>
-        </footer>
-    </div>
-</body>
-</html>
+{% block jscript %}{% endblock %}

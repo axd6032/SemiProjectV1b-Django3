@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python 웹 프로젝트 v1</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/webproject.css">
-    <style>
+{% extends 'layout/base.html' %}
+
+{% block title %}board/view{% endblock %}
+
+{% block stlye %}
         table {width: 60%; margin: 65px auto -10px;
         border-collapse: collapse; table-layout: fixed; margin-bottom: 30px}
         th, td { padding: 10px;}
@@ -15,27 +12,10 @@
         tr:nth-child(4) td {border: 1px solid orange; vertical-align: top;}
         tr:nth-child(4) div {height: 300px; overflow: auto; padding: 5px}
         tr:last-child td {text-align: right}
+{% endblock %}
 
-    </style>
-</head>
-<body>
-<div id = "wrap">
-    <header>
-        <h1>Python 웹 프로젝트 v1</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="board.html">게시판</a></li>
-                <li><a href="myinfo.html">회원정보</a></li>
-
-            </ul>
-        </nav>
-        <hr>
-    </header>
+{% block content %}
     <h1>게시물 본문글</h1>
-    <div id ="main">
     <table>
         <tr>
             <th>제 목</th><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 참말이라구, 친구!</td>
@@ -61,18 +41,13 @@
         </tr>
         <tr>
             <td colspan="2">
-                <button type="button" onclick="location.href='board.html'">목록으로 이동</button>
-                <button type="button" onclick="location.href='write.html'">새글쓰기</button>
+                <button type="button" onclick="location.href='/list'">목록으로 이동</button>
+                <button type="button" onclick="location.href='/write'">새글쓰기</button>
                 <button type="button">수정하기</button>
                 <button type="button">삭제하기</button></td>
         </tr>
     </table>
 
-    </div>
-    <footer>
-        <hr>
-        <span>copyright &copy; 2022. siestageek. All Rights Reserved.</span>
-    </footer>
-</div>
-</body>
-</html>
+{% endblock %}
+
+{% block jscript %}{% endblock %}

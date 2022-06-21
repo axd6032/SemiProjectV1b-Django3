@@ -1,61 +1,9 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Python 웹 프로젝트 v1</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/webproject.css">
-    <style>
-                /* 링크 관련 스타일 시트 */
-        a { font-weight: bold }
-        a:link {color : black ; text-decoration: none }
-        a:visited {color : black ; text-decoration: none }
-        a:hover {color : orange ; text-decoration: underline }
-        a:active {color : orange ; text-decoration: none }
+{% extends 'layout/base.html' %}
 
-        /* 컨텐츠 영역 너비 지정 및 정중앙 배치 */
-        #wrap {/*border: 1px solid red*/; width: 1250px;
-                      margin: 0 auto}
+{% block title %}index{% endblock %}
 
-        /*저작권 문구 가운데 정렬*/
-        footer span{display: block ; text-align: center}
+{% block stlye %}{% endblock %}
 
-        /* 메인 영역 크기 지정*/
-        #main {height: auto; min-height: 500px}
+{% block content %}main{% endblock %}
 
-        /* 상단 메뉴 수평 배치*/
-        ul { list-style: none; padding: 0}
-        ul li {display: inline-block; margin-left: 140px }
-
-        /* 상단 로고 배치 */
-        header h1 {margin-bottom: 45px}
-
-        /* 구분선 */
-        hr { background: black; height: 1px;}
-    </style>
-
-</head>
-<body>
-    <div id="wrap">
-        <header>
-            <h1>Python 웹 프로젝트 v1</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="join.html">회원가입</a></li>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="board.html">게시판</a></li>
-                    <li><a href="myinfo.html">회원정보</a></li>
-
-                </ul>
-            </nav>
-            <hr>
-        </header>
-        <div id ="main"></div>
-        <footer>
-            <hr>
-            <span>copyright &copy; 2022. siestageek. All Rights Reserved.</span>
-        </footer>
-    </div>
-</body>
-</html>
+{% block jscript %}{% endblock %}
