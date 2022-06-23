@@ -16,6 +16,7 @@
 {% block content %}
     <h2>게시판 새글쓰기</h2>
     <form name="boardfrm" method="post">
+    {% csrf_token %}
 
     <div><label for="title">제목</label><input type="text" name="title" id="title"></div>
 

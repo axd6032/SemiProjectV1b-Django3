@@ -1,5 +1,24 @@
 {% extends 'layout/base.html' %}
 
+{% comment %}
+    HTTP 의 특징 중 하나는 stateless(connectionless)임
+    즉, 클라이언트가 서버에 요청을 보내고 서버가 응답을 하면
+    클라이언트는 그 응답을 받자마자 연결이 끊어진다는 의미
+    왜냐하면, 웹서버는 다수의 사용자가 정보를 요청하는 경우가 많기 때문에
+    사용자와의 연결을 유지한다면, 서버의 리소스가 많이 필요할 수 있음
+    따라서, HTTP의 경우 서버가 응답하고 나면 바로 연결을 끊는 이유임
+
+    cookie
+    클라이언트측 웹브라우저에 저장하는 데이터
+
+    session
+    서버측에 저장하는 데이터
+    세션 생성시 고유id를 같이 생성하는데,
+    이를 통해 서버에 접속하는 사용자들을 구분할 수 있음
+    세션을 만료하려면 서버에서 직접 제거해야 함
+
+{% endcomment %}
+
 {% block title %}member/login{% endblock %}
 
 {% block stlye %}
@@ -15,15 +34,41 @@
 
 {% block content %}
      <h2>로그인</h2>
-    <form>
+    <form name="loginfrm" id="loginfrm" method="post">
+        {% csrf_token %}
+        <div style="color:red">{{ error }}</div>
         <div><label for="userid">아이디</label>
           <input type="text" name="userid" id="userid" required></div>
 
         <div><label for="passwd">비밀번호</label>
           <input type="password" name="passwd" id="passwd" required></div>
 
-        <div><button type="button">로그인</button></div>
+        <div><button type="button" id="loginbtn">로그인</button></div>
     </form>
 {% endblock %}
 
-{% block jscript %}{% endblock %}
+{% block jscript %}
+    <script>
+        const loginbtn = document.querySelector('#loginbtn');
+        loginbtn.addEventListener('click', () => {
+           const userid = document.loginfrm.userid;
+           const passwd = document.loginfrm.passwd;
+
+           if (userid.value == '') {
+               alert('아이디를 입력하세요!');
+               userid.focus();
+               return;
+           }
+           else if (passwd.value == '') {
+               alert('비밀번호를 입력하세요!');
+               passwd.focus();
+               return;
+           }
+           else {
+               // 버튼으로 submit 기능을 수행함
+               // document.폼이름.submit()
+                document.loginfrm.submit();
+           }
+        });
+    </script>
+{% endblock %}
