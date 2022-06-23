@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}index{% endblock %}
+
+{% block stlye %}{% endblock %}
+
+{% block content %}
+    <h2>회원가입완료</h2>
+    <h3>아이디 : {{ form.userid }}</h3>
+    <h3>이름 : {{ form.name }}</h3>
+    <h3>이메일 : {{ form.email }}</h3>
+    <hr>
+    <div><a href="/login">로그인하러 가기</a></div>
+{% endblock %}
+
+{% block jscript %}{% endblock %}
